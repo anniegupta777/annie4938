@@ -1,0 +1,71 @@
+<body>
+    <div class="flex">
+        <nav >
+            <a class="flex-item" style="align-self: flex-start" class="btn btn-light action-button" routerLink="/onBoardingForm" routerLinkActive="active">Onboarding Form</a>
+            <a class="flex-item" style="align-self: flex-end" class="btn btn-light action-button" routerLink="/listStudents" routerLinkActive="active">List Students</a>
+          </nav>
+        </div>
+<form class="flex-item" style="border:1px solid #ccc" [formGroup]="studentForm" (ngSubmit)="onSubmit()" ngNativeValidate  >
+    <div class="container">
+      <h1>Onboarding Form(Edit)
+      </h1>
+      <hr>
+  
+      <label for="studentName"><b>Student Name</b></label>
+      <input type="text" [value]="studentDetails.studentName" name="studentName" formControlName="studentName"  required >
+      
+      <label for="category"><b>Category</b></label>
+      <div *ngIf="isDomestic(studentDetails.category);then domestic else international"></div>
+      <ng-template #domestic>
+      <select name="categories"   >
+          <option selected="selected" value="Domestic"> Domestic </option>
+          <option value="International"> International </option>
+      </select> 
+      </ng-template>
+      <ng-template #international >
+      <select name="categories" >
+          <option value="Domestic"> Domestic </option>
+          <option selected="selected" value="International" >International</option>
+      </select> 
+      </ng-template>
+
+      <div >
+      <label for="documents"><b>Documents</b></label>
+      </div>
+      
+      <div *ngIf="isDomestic(studentDetails.category)">
+      <div *ngFor="let documents of domesticDocuments" class="checkbox">
+          <input *ngIf="splitted.includes(documents)" type="checkbox" name="documents" style="margin-bottom:15px" checked > 
+          <input *ngIf="splitted.includes(documents)&&isMandatory(domesticDocuments)" type="checkbox" name="documents" style="margin-bottom:15px" checked required> 
+          <input *ngIf="!splitted.includes(documents)" type="checkbox" name="documents" style="margin-bottom:15px"> 
+          <input *ngIf="!splitted.includes(documents)&&isMandatory(domesticDocuments)" type="checkbox" name="documents" style="margin-bottom:15px" required> 
+          {{documents}} 
+        </div>
+      </div>
+      <div *ngIf="!isDomestic(studentDetails.category)">
+      <div *ngFor="let documents of internationalDocuments" class="checkbox">
+          <input *ngIf="splitted.includes(documents)" type="checkbox" name="documents" style="margin-bottom:15px" checked required > 
+          <input *ngIf="!splitted.includes(documents)" type="checkbox" name="documents" style="margin-bottom:15px" required> 
+          {{documents}}  
+      </div>
+      </div>
+
+
+      <br>
+      <label for="dob"><b>DOB</b></label>
+      <input type="text" [value]="studentDetails.dob" name="dob" formControlName="dob"  required>
+      <label for="fatherName"><b>Father’s Name</b></label>
+      <input type="text" [value]="studentDetails.fatherName" name="fatherName" formControlName="fatherName" required>
+  
+      <label for="motherName"><b>Mother’s Name</b></label>
+      <input type="text" [value]="studentDetails.motherName" name="motherName" formControlName="motherName" required>
+  
+      <label for="lastClassScore"><b>Last class score</b></label>
+      <input type="text" [value]="studentDetails.lastClassScore" name="lastClassScore" formControlName="lastClassScore" required>
+  
+      <div class="clearfix">
+        <button type="submit" class="signupbtn" >Onboard</button>
+      </div>
+    </div>
+  </form>
+</body>

@@ -1,0 +1,64 @@
+
+<body>
+    <div class="flex">
+        <nav >
+            <a class="flex-item" style="align-self: flex-start" class="btn btn-light action-button" routerLink="/onBoardingForm" routerLinkActive="active">Onboarding Form</a>
+            <a class="flex-item" style="align-self: flex-end" class="btn btn-light action-button" routerLink="/listStudents" routerLinkActive="active">List Students</a>
+          </nav>
+        </div>
+<h1>Student List</h1>
+
+<select name="categories" (change)="onChange($event.target.value)">
+  <option value="All" selected>All</option>
+  <option value="Domestic" >Domestic</option>
+  <option value="International" >International</option>
+</select> 
+<div class="search-hero">
+<input type="text" placeholder="SearchStudent"  name="search" [(ngModel)]="searchText">
+</div>
+<ul class="article-list-basic"  >
+     
+       <li *ngFor="let studentList of studentList | filter:searchText " [style.backgroundColor]="categoryColor(studentList.category)">
+          <span *ngIf="((selectedCategoryStudents==='Domestic'&&studentList.category==='Domestic')||(selectedCategoryStudents==='International'&&studentList.category==='International')||selectedCategoryStudents==='All')"  [style.backgroundColor]="categoryColor(studentList.category)" >
+          <h2 >{{studentList.studentName}}</h2  >
+        <ul>
+        <p>Category:            {{studentList.category}}</p>
+        <p>Father's Name:       {{studentList.fatherName}}</p>
+        <p>Mother's Name:       {{studentList.motherName}}</p>
+        <p>D.O.B:               {{studentList.dob}}</p>
+        <p>Documents Submitted: {{studentList.documentsSubmitted}}</p>
+        <p>Marks Scored:        {{studentList.lastClassScore}}</p>
+        </ul>
+        <button class="button1" class="btn btn-success" [routerLink]="['/editOnboardingForm', studentList.id]" routerLinkActive="active">Edit</button>
+        <button class="button2" class="btn btn-light" [routerLink]="['/viewOnboardingForm', studentList.id]" routerLinkActive="active">View</button>
+        <button class="button3" class="btn btn-danger" routerLink="/listStudents" (click) ='deleteStudent(studentList.id)'>Delete</button>
+       </span>    
+        </li>
+
+    </ul>
+
+
+    <!-- <ul class="article-list-basic"  > 
+
+        <li *ngFor="let studentList of studentList | filter:searchText " [style.backgroundColor]="categoryColor(studentList.category)">
+          <span *ngIf="((selectedCategoryStudents==='Domestic'&&studentList.category==='Domestic')||(selectedCategoryStudents==='International'&&studentList.category==='International')||selectedCategoryStudents==='All')"  [style.backgroundColor]="categoryColor(studentList.category)" >
+          <h2 >{{studentList.studentName}}</h2  >
+              <ul>
+              <li>Category:            {{studentList.category}}</li>
+              <li>Father's Name:       {{studentList.fatherName}}</li>
+              <li>Mother's Name:       {{studentList.motherName}}</li>
+              <li>D.O.B:               {{studentList.dob}}</li>
+              <li>Documents Submitted: {{studentList.documentsSubmitted}}</li>
+              <li>Marks Scored:        {{studentList.lastClassScore}}</li>
+              </ul>
+              <button class="button1" class="btn btn-success" [routerLink]="['/editOnboardingForm', studentList.id]" routerLinkActive="active">Edit</button>
+              <button class="button2" class="btn btn-light" [routerLink]="['/viewOnboardingForm', studentList.id]" routerLinkActive="active">View</button>
+              <button class="button3" class="btn btn-danger" routerLink="/listStudents" (click) ='deleteStudent(studentList.id)'>Delete</button>
+          </span>    
+        </li>
+
+    </ul> -->
+
+  </body>
+
+  

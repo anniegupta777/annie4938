@@ -1,0 +1,23 @@
+<body>
+        
+      <form class="flex-item" style="border:1px solid #ccc" [formGroup]="myForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+          <div class="container">
+            
+            <h1>Nagarro Login
+            </h1>
+            <hr>
+        
+            <label for="Email"><b>Email</b></label>
+            <input type="text" placeholder="Email" name="Email" formControlName="Email" required>
+            
+            <label for="Password"><b>Password</b></label>
+            <input type="password" placeholder="Password" name="Password" formControlName="Password" required>
+        
+            <div class="clearfix">
+              <button pButton type="submit" class="signupbtn">Login</button>
+              <button class="rButton" style="background-color:grey" type="submit"  onclick="reset()" class="signupbtn">Reset</button>
+            </div>
+          </div>
+        </form>
+      </body>
+      

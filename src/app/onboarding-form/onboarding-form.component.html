@@ -1,0 +1,63 @@
+<body>
+  <div class="flex">
+    <nav >
+        <a class="flex-item" style="align-self: flex-start" class="btn btn-light action-button" routerLink="/onBoardingForm" routerLinkActive="active">Onboarding Form</a>
+        <a class="flex-item" style="align-self: flex-end" class="btn btn-light action-button" routerLink="/listStudents" routerLinkActive="active">List Students</a>
+      </nav>
+    </div>
+<form class="flex-item" style="border:1px solid #ccc" [formGroup]="studentForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="container">
+      
+      <h1>Onboarding Form
+      </h1>
+      <hr>
+  
+      <label for="studentName"><b>Student Name</b></label>
+      <input type="text" placeholder="Name" name="studentName" formControlName="studentName" required>
+      
+      <label for="category"><b>Category</b></label>
+      <select name="categories" placeholder="--select--" formControlName="category" [(ngModel)]="selectedCategory">
+        <option value="Domestic" >Domestic</option>
+        <option value="International" >International</option>
+      </select> 
+      <div >
+      <label for="documents"><b>Documents</b></label>
+      
+      <div *ngIf="selectedCategory==='Domestic'">
+          <div *ngFor="let domesticDocuments of domesticDocuments" class="checkbox">
+            <div *ngIf="isMandatory(domesticDocuments);then mandatory else nonMandatory"></div>
+            <ng-template #mandatory>
+              <input type="checkbox" name="documents" style="margin-bottom:15px" [value]= 'domesticDocuments'(click) ='updateDomesticDocumentList($event)' required>
+            </ng-template>
+            <ng-template #nonMandatory>
+                <input type="checkbox" name="documents" style="margin-bottom:15px" [value]= 'domesticDocuments'(click) ='updateDomesticDocumentList($event)' >
+            </ng-template>
+            {{domesticDocuments}}
+        </div>
+      </div>
+      <div *ngIf="selectedCategory==='International'">
+          <div *ngFor="let internationalDocuments of internationalDocuments" class="checkbox">
+            <input type="checkbox" name="documents" style="margin-bottom:15px" [value]= 'internationalDocuments' [required]="true" (click) ='updateInternationalDocumentList($event)'>
+            {{internationalDocuments}}
+          </div>
+      </div>
+      
+      </div>
+      <br>
+      <label for="dob"><b>DOB</b></label>
+      <input type="text" placeholder="DOB(calendar)" name="dob" formControlName="dob" required>
+      <label for="fatherName"><b>Father’s Name</b></label>
+      <input type="text" placeholder="Father’s Name" name="fatherName" formControlName="fatherName" required>
+  
+      <label for="motherName"><b>Mother’s Name</b></label>
+      <input type="text" placeholder="Mother’s Name" name="motherName" formControlName="motherName" required>
+  
+      <label for="lastClassScore"><b>Last class score</b></label>
+      <input type="text" placeholder="%(marks)" name="lastClassScore" formControlName="lastClassScore" required>
+  
+      <div class="clearfix">
+        <button pButton type="submit" class="signupbtn">Onboard</button>
+      </div>
+    </div>
+  </form>
+</body>

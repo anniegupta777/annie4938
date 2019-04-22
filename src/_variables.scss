@@ -1,0 +1,52 @@
+
+$bg-color: #ecf0f1;
+$panel-color: #ffffff;
+
+$text-color: #333333;
+$sub-text: #838383; //#959796, #9b9b9b, #67707c, #484848, #626463, #666666
+$alt-text: #387bba; //#295987
+
+$cta-primary: #387bba;
+$cta-primary-highlight: #295987;
+$cta-text: #ffffff;
+
+$cta-secondary: #f5a623;
+$cta-secondary-highlight: lighten($cta-secondary, 10%);
+
+$cta-tertiary: #ececec;
+$cta-tertiary-highlight: #d6d3d3;
+
+$border-dark: #b6b6b6;
+
+$border-color-dark: lighten($border-dark, 15%);
+$login-page-background: #212c56;
+
+$shadow-color-1: lighten(#f0f0f0, 10%);
+$shadow-color-2: lighten(#d7d7d7,10%);
+$shadow-color-3: lighten(#b0abab,20%);
+
+$border-radius: 8px;
+
+$xxxxl: 6vw;
+$xxxl: 4.5vw; // 65px
+$xxxl-em: 3.5em;
+$xxl: 2.5vw; // 36px
+$xxl-em: 2em;
+$xl: 1.5vw; // 24px
+$xl-em: 1.7rem;
+$large: 1.4vw; // 22px
+$large-em: 1.5rem;
+$medium: 1.2vw; // 16px, 18px
+$medium-em: 1.3rem;
+$small: 1vw; // 14px
+$small-em: 1rem;
+$text-size: 0.8vw;
+
+$bold: 700;
+$semi-bold: 500;
+$normal: 400;
+$light: 200;
+
+$cart-button: 4vw; //58px
+$cart-button-color: #387bba;
+

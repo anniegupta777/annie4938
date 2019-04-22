@@ -1,0 +1,259 @@
+p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+ 
+  }
+  h1{
+    font-size: 16px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }  
+
+  body {
+    background:url(../../assets/images/bg.jpg);
+    background-size:cover;
+    padding-bottom:40%;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+  #rcorners1 {
+    border-radius: 25px;
+    //background: rgb(86, 183, 196);
+    padding: 20px; 
+    width: 300px;
+    height: 200px; 
+  }
+
+  
+  .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px 2em;
+  }
+  
+  .box :first-child {
+      align-self: right;
+  }
+  .button {
+    border: solid;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }  
+  p {
+    margin: 0;
+    padding: 0;
+    font-size:10px;
+} 
+  .btn {
+    width:60px;
+    padding:5px;
+    height: 30px;
+}
+.Container input{ /* You Can Name it what you want*/
+  margin-right:16px;
+  }
+  .Container input:last-child{
+  margin-right:0px;
+  /*so the last one dont push the div thas giving the space only between the inputs*/
+  }
+  .button1 {background-color: #4CAF50;}
+  .button2 {background-color: grey; color: black;} /* Gray */ 
+  .button3 {background-color: #f44336;} /* Red */ 
+  
+  .placeholder-box {
+    position: relative;
+    display: block;
+    width: 300px;
+    min-height: 150px;
+    margin-top: 50px;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+  }
+  
+  .placeholder-box p {
+    text-align: center;
+    margin: 0 0 15px;
+  }
+  
+  .placeholder-box ul {
+    margin: 0;
+  }
+  
+  .shape{
+    text-align:center;
+    background:
+      linear-gradient(65deg , transparent 50%,rgba(3,78,136,0.7) 50%) left no-repeat, 
+      linear-gradient(0deg , rgba(3,78,136,0.7),rgba(3,78,136,0.7)) 30px 0 no-repeat;
+    
+    background-size:30px 100%, 100% 100%;
+    width:200px;
+    height:60px;
+    line-height:60px;
+    padding:0 20px;
+    color:white;
+    margin:20px auto;
+    position:relative;
+  }
+  .header-bottom{
+    position: absolute;
+    right:13%;
+    bottom:5%;
+    }
+    
+    .blue-rectangle {
+    background-color: rgba(3,78,136,0.7);
+    padding: 10px 20px 10px 200px;
+    margin-bottom: 20px;
+    }
+    
+    .blue-rectangle p{
+    color:white;
+    text-transform: uppercase;
+    font-size:18px;
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      
+    }
+    h1{
+      color:white;
+      text-align: center;
+      padding: 16px;
+      font-size: 24px;
+  }
+    
+    .flex-item + .flex-item,a.action-button{ 
+      margin-top: 15px;
+    background-color: #0066FF;
+    display:inline-block;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+      justify-content: left;
+      margin-top: 2.5%;
+      background:#208f8f;
+      border-radius:20px;
+      font-size:inherit;
+      color:#fff;
+      box-shadow:none;
+      border:none;
+      text-shadow:none;
+      transition:background-color 0.25s;
+      width: 100%;
+      padding-right: 10%;
+      
+    align-items: center;
+  }
+  
+ 
+  .div1 {  
+    font-family: sans-serif;
+   
+    width:50%; 
+    vertical-align:top
+}
+
+.div2 {
+  font-family: sans-serif;
+  
+  width:50%; 
+  vertical-align:top
+}
+
+
+
+.article-list-basic{
+  list-style:none;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+  padding: 0;
+}
+
+.article-list-basic li{
+  display: inline-block;
+  box-sizing:border-box;
+  border-radius: 3px;
+  box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+  border:1px solid #cfcfcf;
+  background-color: #fff;
+
+  font: normal 13px sans-serif;
+  text-align: left;
+
+  margin: 20px;
+  max-width: 315px;
+}
+
+/* Article photo */
+
+.article-list-basic li > a{
+  display: block;
+  width: 100%;
+  height: 155px;
+  overflow: hidden;
+}
+
+.article-list-basic li > a img{
+  width: 100%;
+}
+
+.article-list-basic li div{
+  padding: 25px 20px;
+}
+
+/* Article title */
+
+.article-list-basic li h2{
+  font: bold 16px sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin:0;
+}
+
+.article-list-basic li h2 a{
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+/* Article excerpt */
+
+.article-list-basic li div p{
+  line-height: 20px;
+  color: #5d5d5d;
+
+  margin: 20px 0;
+}
+
+/* Read more */
+
+.article-list-basic li a.read-more{
+  background-color: #87bcd7;
+  cursor: pointer;
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+

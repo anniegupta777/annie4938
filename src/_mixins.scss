@@ -1,0 +1,18 @@
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow() {
+  -webkit-box-shadow: 1px 2px 2px 2px $shadow-color-3;  
+  -moz-box-shadow: 1px 2px 2px 2px $shadow-color-3;
+  box-shadow: 1px 2px 2px 2px $shadow-color-3;
+}
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate($degree);
+  transform: rotate($degree);
+}
